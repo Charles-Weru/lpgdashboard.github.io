@@ -1,0 +1,129 @@
+.reports {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.report-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.report-controls .ant-select {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.report-controls .ant-picker {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.report-controls button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%;
+}
+
+.report-controls button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.report-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.generated-reports {
+  width: 100%;
+  max-width: 800px;
+}
+
+.generated-reports h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.generated-reports ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.generated-reports li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.generated-reports li:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.generated-reports a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+.generated-reports a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.generated-reports span {
+  margin-left: 10px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reports {
+    padding: 15px;
+  }
+
+  .report-controls {
+    max-width: 100%;
+  }
+
+  .generated-reports {
+    max-width: 100%;
+  }
+
+  .report-controls button {
+    padding: 8px 16px;
+  }
+
+  .generated-reports h2 {
+    font-size: 1.2rem;
+  }
+
+  .generated-reports li {
+    padding: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .generated-reports a {
+    font-size: 0.9rem;
+  }
+}

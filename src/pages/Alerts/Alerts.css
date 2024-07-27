@@ -1,0 +1,94 @@
+.alerts {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.alerts ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.alerts li {
+  margin: 10px 0;
+  padding: 15px;
+  background-color: #f8d7da;
+  border-left: 5px solid #f5c6cb;
+  border-radius: 4px;
+  font-size: 1em;
+  color: #721c24;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alerts li:hover {
+  background-color: #f5c6cb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alerts li .alert-message {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.alerts li .alert-timestamp {
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.alerts li .alert-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.alerts li .alert-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.alerts li .alert-actions button.view-details {
+  background-color: #007bff;
+  color: white;
+}
+
+.alerts li .alert-actions button.view-details:hover {
+  background-color: #0056b3;
+}
+
+.alerts li .alert-actions button.dismiss {
+  background-color: #dc3545;
+  color: white;
+}
+
+.alerts li .alert-actions button.dismiss:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .alerts {
+    padding: 10px;
+  }
+
+  .alerts li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .alerts li .alert-actions {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .alerts li .alert-actions button {
+    width: 48%;
+    padding: 10px 0;
+  }
+}

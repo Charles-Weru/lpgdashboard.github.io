@@ -1,0 +1,127 @@
+.sidebar {
+  top: 50px;
+  left: 0;
+  width: 80px;
+  height: 100% /* calc(100% - 50px - 60px) */;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(17px);
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.sidebar:hover {
+  width: 260px;
+}
+
+.links {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+  width: 100%;
+}
+
+.links li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+  padding: 10px;
+}
+
+.links li:hover {
+  border-radius: 4px;
+  cursor: pointer;
+  background: #fff;
+  transform: translateX(5px);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.links li.active {
+  background: #f0f0f0;
+  border-left: 4px solid #007bff;
+}
+
+.links li.active a {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.links li a {
+  color: #333;
+  padding: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  display: none;
+}
+
+.sidebar:hover .links li a {
+  display: block;
+}
+
+.symbols {
+  font-size: 30px;
+  color: #333;
+}
+
+.links li:hover .symbols,
+.links li:hover a {
+  color: #007bff;
+}
+
+.links li a:focus {
+  outline: none;
+  background: #eaeaea;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar:hover {
+    width: 220px;
+  }
+
+  .links li a {
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .sidebar:hover .links li a {
+    opacity: 1;
+  }
+}
+
+.links li .symbols {
+  position: relative;
+}
+
+.links li .symbols:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  visibility: hidden;
+}
+
+.links li .symbols:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
